@@ -46,3 +46,6 @@ const compiler = ajv.compile(schema);
 const val = compiler({ str: '1' });
 ```
 
+## Important
+
+Data mutation occurs during the validation process.

@@ -48,13 +48,17 @@ export function ajvFactory(options?: AjvOptions): Ajv {
         // eslint-disable-next-line
         const { validate: _, ...preSchema } = schema;
 
+        if (!ajv.validate(preSchema, value)) {
+          return false;
+        }
+
         /* prettier-ignore */
-        return ajv.validate(preSchema, value)
+        return value !== null
           ? validator(value, schema)
-          : false;
+          : true;
       }
 
-      return validator(value, schema);
+      return validator(value);
     },
   });
 
