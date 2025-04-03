@@ -1,6 +1,6 @@
 {
   "name": "@zalib/ajv",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "AJV validator helpers",
   "author": "https://github.com/wsp-repo/",
   "license": "UNLICENSED",
