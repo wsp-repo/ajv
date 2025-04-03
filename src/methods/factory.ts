@@ -1,4 +1,4 @@
-import { deepCopy, isFunction } from '@zalib/core';
+import { deepClone, isFunction } from '@zalib/core';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 import Ajv, { Options } from 'ajv';
 import ajvErrors from 'ajv-errors';
@@ -14,14 +14,14 @@ import { baseOptions } from '../constants';
  */
 export function ajvOptions(options?: AjvOptions): Options {
   const callOptions = isFunction<AjvOverrider>(options)
-    ? options(deepCopy(baseOptions))
+    ? options(deepClone(baseOptions))
     : options;
 
   // фиксированные опции
   const fixedOptions: Options = { allErrors: true };
 
   /* prettier-ignore */
-  return deepCopy(
+  return deepClone(
     { ...baseOptions, ...callOptions, ...fixedOptions },
     true,
   );

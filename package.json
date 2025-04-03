@@ -8,23 +8,20 @@
     "validator",
     "ajv"
   ],
+  "files": [
+    "dist/**/*"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "homepage": "https://github.com/wsp-repo/ajv#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wsp-repo/ajv.git"
   },
-  "homepage": "https://github.com/wsp-repo/ajv#readme",
-  "bugs": {
-    "url": "https://github.com/wsp-repo/ajv/issues"
-  },
   "engines": {
-    "node": ">=18.15.0",
-    "npm": ">=9.5.0"
+    "node": ">=20.19.0",
+    "npm": ">=10.8.0"
   },
-  "files": [
-    "dist/**/*"
-  ],
   "scripts": {
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -35,10 +32,13 @@
     "prebuild": "rimraf dist",
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
+    "release:major": "npm version major",
+    "release:minor": "npm version minor",
+    "release:patch": "npm version patch",
     "test": "jest --config ./jest.unit.js"
   },
   "dependencies": {
-    "@zalib/core": "1.0.5",
+    "@zalib/core": "1.0.7",
     "ajv": "8.17.1",
     "ajv-errors": "3.0.0",
     "ajv-formats": "3.0.1",
@@ -50,7 +50,7 @@
     "@types/ajv-errors": "2.0.0",
     "@types/ajv-keywords": "3.4.0",
     "@types/jest": "29.5.12",
-    "@zalib/linter": "1.1.0",
+    "@zalib/linter": "1.1.1",
     "husky": "9.0.11",
     "jest": "29.7.0",
     "jest-junit": "16.0.0",
